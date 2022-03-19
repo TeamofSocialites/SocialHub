@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-SocialSearchHub is a hub for users to search for topics, ideas, and pictures within multiple social media apps at one time. Users will be able to 
+SocialSearchHub is a hub for users to search for topics, ideas, and pictures within multiple social media apps at one time.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
