@@ -89,16 +89,28 @@ SocialSearchHub is a hub for users to search for topics, ideas, and pictures wit
 [This section will be completed in Unit 9]
 ### Models
 #### User
-- username
-- password
-- email
-#### Post
-- image (can be nil)
-- caption
-- user
-- source (social media)
+| Property         | Type     | Description |
+| ---------------- | -------- | ------------|
+| objectId         | String   | unique id for the user post (default field) |
+| username         | String   | an identifier for the user |
+| password         | String   | the password used to login |
+| email            | String   | the email associated with the user |
+| favoriteSearches | List     | a collection of strings representing searches favorited by the user |
+| darkMode         | Boolean  | if true ui will be in dark mode, if false ui will be in light mode|
+
 ### Networking
-Twitter Content
-- GET /tweets: https://api.twitter.com/1.1/search/tweets.json
-Instagram Content
-- GET /{ig-hashtag-id}/top_media — to get the most popular photos and videos that have a specific hashtag
+Signup Screen
+- (Create/POST) Create a new user object
+
+Profile Screen
+- (Read/GET) Query logged in user object
+
+-Base URL - https://api.twitter.com/1.1
+HTTP Verb | Endpoint | Description|
+|----------|----------|------------|
+|`GET`    | /tweets: | retrieves tweets based on search |
+    
+-Base URL - graph.facebook.com
+HTTP Verb | Endpoint | Description|
+|----------|----------|------------|
+|`GET`    | /{ig-hashtag-id}/top_media | to get the most popular photos and videos that have a specific hashtag|
