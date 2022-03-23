@@ -86,7 +86,6 @@ SocialSearchHub is a hub for users to search for topics, ideas, and pictures wit
 ![](https://i.imgur.com/EllWlcZ.jpg)
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
 #### User
 | Property         | Type     | Description |
