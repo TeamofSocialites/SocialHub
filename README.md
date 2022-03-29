@@ -99,7 +99,7 @@ SocialSearchHub is a hub for users to search for topics, ideas, and pictures wit
 
 ### Networking
 Signup Screen
-- (Create/POST) Create a new user object
+- (Create/USER) Create a new user object
 
 Profile Screen
 - (Read/GET) Query logged in user object
