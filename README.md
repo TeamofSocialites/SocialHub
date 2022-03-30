@@ -1,5 +1,15 @@
 # SocialSearchHub
 
+> 👍 To make edits
+> 
+> 1. Make sure CocoaPods is installed. See this [guide](https://guides.codepath.org/ios/CocoaPods) if not.
+> 2. Clone the workspace.
+> 3. Open the terminal
+> 4. CD into the directory (that contains the podfile, top-level)
+> 5. Run `pod install`. (to install libraries)
+>
+> Remember to work out of `.xcworkspace` ONLY.
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
