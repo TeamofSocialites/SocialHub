@@ -7,16 +7,30 @@
 // OWNER: Cassey
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
+    let ParseDB = ParseDBAPI()
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        passwordTextField.isSecureTextEntry = true
     }
     
 
+    @IBAction func onSignUp(_ sender: Any) {
+        let signUpResult = ParseDB.signUp(email: emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!)
+        
+        if signUpResult == true {
+            self.performSegue(withIdentifier: "signupSegue", sender: nil)
+        } else {
+            print("Error in Signing Up")
+        }
+    }
     /*
     // MARK: - Navigation
 

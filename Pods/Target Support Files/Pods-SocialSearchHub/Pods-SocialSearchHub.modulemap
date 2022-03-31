@@ -1,0 +1,6 @@
+framework module Pods_SocialSearchHub {
+  umbrella header "Pods-SocialSearchHub-umbrella.h"
+
+  export *
+  module * { export * }
+}
