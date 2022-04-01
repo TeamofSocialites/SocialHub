@@ -34,18 +34,18 @@ SocialSearchHub is a hub for users to search for topics, ideas, and pictures wit
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* The user can sign up and create a new account
-* The user can log into the app
-* The user can log out of the app
-* The user can view the selected social media post from within a table view
-* The user can add searches to their favorites
-* The user can search for specific topics
-* The user can toggle Dark / Light mode
+* [x] The user can sign up and create a new account
+* [x] The user can log into the app
+* [] The user can log out of the app
+* [] The user can view the selected social media post from within a table view
+* [] The user can add searches to their favorites
+* [] The user can search for specific topics
+* [] The user can toggle Dark / Light mode
 
 **Optional Nice-to-have Stories**
-* User can be taken to actual X social media app.
-* The user can log into their social media apps to save posts for later
-* Enable Push notifiactions 
+* [] User can be taken to actual X social media app.
+* [] The user can log into their social media apps to save posts for later
+* [] Enable Push notifiactions 
     
 
 ### 2. Screen Archetypes
