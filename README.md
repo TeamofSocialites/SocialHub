@@ -123,3 +123,9 @@ HTTP Verb | Endpoint | Description|
 HTTP Verb | Endpoint | Description|
 |----------|----------|------------|
 |`GET`    | /{ig-hashtag-id}/top_media | to get the most popular photos and videos that have a specific hashtag|
+
+## Sprint Gif Demos
+
+### Sprint 1
+
+![](sprint1demo.gif)

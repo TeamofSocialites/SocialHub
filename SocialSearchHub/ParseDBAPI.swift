@@ -19,8 +19,7 @@ class ParseDBAPI {
         newUser["password"] = password
         newUser["favoriteSearches"] = []
         var signUpResult = false
-        newUser.saveInBackground {
-          (success: Bool, error: Error?) in
+        newUser.signUpInBackground { (success, error) in
           if (success) {
               print("New user has been created!")
               signUpResult = true
@@ -37,17 +36,18 @@ class ParseDBAPI {
     // OUTPUTS: Returns if the user was successfully logged in or not
     func onLogIn(username: String, password: String) -> Bool {
         var logInResult = false
-        PFUser.logInWithUsername(inBackground: username, password:password) {
-          (user: PFUser?, error: Error?) -> Void in
-          if user != nil {
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+          if (user != nil) {
               // The log in was successful
-              print("The user has logged in!")
               logInResult = true
+              print("The user has logged in!")
           } else {
               // There was an error.
               print(error ?? "There was an error logging the user in.")
           }
         }
+        
+        print("loggedinresult in parse api", logInResult)
         return logInResult
     }
     
