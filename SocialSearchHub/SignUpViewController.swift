@@ -23,12 +23,27 @@ class SignUpViewController: UIViewController {
     
 
     @IBAction func onSignUp(_ sender: Any) {
-        let signUpResult = ParseDB.signUp(email: emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!)
+//        let signUpResult = ParseDB.signUp(email: emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!)
+//        print("Sign Up Result", signUpResult)
+//        if (signUpResult == true) {
+//            self.performSegue(withIdentifier: "signupSegue", sender: nil)
+//        } else {
+//            print("Error in Signing Up")
+//        }
         
-        if signUpResult == true {
-            self.performSegue(withIdentifier: "signupSegue", sender: nil)
-        } else {
-            print("Error in Signing Up")
+        let newUser = PFUser()
+        newUser["email"] = emailTextField.text!
+        newUser["username"] = usernameTextField.text!
+        newUser["password"] = passwordTextField.text!
+        newUser["favoriteSearches"] = []
+        newUser.signUpInBackground { (success, error) in
+          if (success) {
+              print("New user has been created!")
+              self.performSegue(withIdentifier: "signupSegue", sender: nil)
+          } else {
+              // There was a problem, check error.description
+              print(error?.localizedDescription ?? "Signing the user up failed.")
+          }
         }
     }
     /*
