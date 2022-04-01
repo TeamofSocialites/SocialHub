@@ -128,4 +128,9 @@ HTTP Verb | Endpoint | Description|
 
 ### Sprint 1
 
+User Stories Completed:
+- The user can sign up and create a new account.
+- The user can log into the app.
+
 ![](sprint1demo.gif)
+
