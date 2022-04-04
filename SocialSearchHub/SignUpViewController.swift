@@ -19,6 +19,15 @@ class SignUpViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
     }
     
+    
+    @IBAction func onBackButton(_ sender: Any) {
+        // When Back button is presssed go back to LoginViewController
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
+        let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(loginViewController, animated:true, completion:nil)
+    }
+    
 
     @IBAction func onSignUp(_ sender: Any) {
         let newUser = PFUser()

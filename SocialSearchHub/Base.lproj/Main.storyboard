@@ -144,6 +144,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="onBackButton:" destination="2pa-B0-aQR" eventType="touchUpInside" id="vLj-st-GRB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nc2-mY-XCi"/>
@@ -273,7 +276,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h7K-mi-pYF"/>
+        <segue reference="TP1-J1-wSs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SocialSearchHub-logos_black" width="1200" height="1200"/>
