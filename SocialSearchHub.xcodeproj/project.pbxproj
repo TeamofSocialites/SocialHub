@@ -22,7 +22,6 @@
 		A494F49627F3D80400A01E8C /* SocialSearchHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F49527F3D80400A01E8C /* SocialSearchHubUITests.swift */; };
 		A494F49827F3D80400A01E8C /* SocialSearchHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F49727F3D80400A01E8C /* SocialSearchHubUITestsLaunchTests.swift */; };
 		A494F4A927F3EC3B00A01E8C /* SocialMediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4A827F3EC3A00A01E8C /* SocialMediaAPI.swift */; };
-		A494F4AB27F3EC4900A01E8C /* ParseDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AA27F3EC4900A01E8C /* ParseDBAPI.swift */; };
 		A494F4AD27F3EF1000A01E8C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */; };
 		A494F4AF27F3F2DC00A01E8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		A494F49527F3D80400A01E8C /* SocialSearchHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSearchHubUITests.swift; sourceTree = "<group>"; };
 		A494F49727F3D80400A01E8C /* SocialSearchHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSearchHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A494F4A827F3EC3A00A01E8C /* SocialMediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaAPI.swift; sourceTree = "<group>"; };
-		A494F4AA27F3EC4900A01E8C /* ParseDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseDBAPI.swift; sourceTree = "<group>"; };
 		A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BBBCC01A1F0F1F9589458AAB /* Pods_SocialSearchHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSearchHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +158,6 @@
 				A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */,
 				A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */,
 				A494F4A827F3EC3A00A01E8C /* SocialMediaAPI.swift */,
-				A494F4AA27F3EC4900A01E8C /* ParseDBAPI.swift */,
 				A494F47D27F3D80400A01E8C /* Assets.xcassets */,
 				A494F47F27F3D80400A01E8C /* LaunchScreen.storyboard */,
 				A494F48227F3D80400A01E8C /* Info.plist */,
@@ -430,7 +427,6 @@
 				A494F47927F3D7FB00A01E8C /* LoginViewController.swift in Sources */,
 				A494F47527F3D7FB00A01E8C /* AppDelegate.swift in Sources */,
 				A494F4AF27F3F2DC00A01E8C /* ProfileViewController.swift in Sources */,
-				A494F4AB27F3EC4900A01E8C /* ParseDBAPI.swift in Sources */,
 				A494F47727F3D7FB00A01E8C /* SceneDelegate.swift in Sources */,
 				A46D47F627F46D8C0091D56F /* SettingsViewController.swift in Sources */,
 			);

@@ -10,7 +10,6 @@ import UIKit
 import Parse
 
 class LoginViewController: UIViewController {
-    let ParseDB = ParseDBAPI()
     
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -31,17 +30,6 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func onLogIn(_ sender: Any) {
-//        let logInResult = ParseDB.onLogIn(username: usernameTextField.text!, password: passwordTextField.text!)
-//        print("LogInResult:", logInResult)
-//        if (logInResult == true) {
-//            print("in true")
-//            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//        } else {
-//            print("Error with logging in")
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
-//        }
-        
         PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (user, error) in
           if (user != nil) {
               // The log in was successful
