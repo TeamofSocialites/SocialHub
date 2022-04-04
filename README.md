@@ -1,5 +1,15 @@
 # SocialSearchHub
 
+> 👍 To make edits
+> 
+> 1. Make sure CocoaPods is installed. See this [guide](https://guides.codepath.org/ios/CocoaPods) if not.
+> 2. Clone the workspace.
+> 3. Open the terminal
+> 4. CD into the directory (that contains the podfile, top-level)
+> 5. Run `pod install`. (to install libraries)
+>
+> Remember to work out of `.xcworkspace` ONLY.
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
@@ -24,18 +34,18 @@ SocialSearchHub is a hub for users to search for topics, ideas, and pictures wit
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* The user can sign up and create a new account
-* The user can log into the app
-* The user can log out of the app
-* The user can view the selected social media post from within a table view
-* The user can add searches to their favorites
-* The user can search for specific topics
-* The user can toggle Dark / Light mode
+* [x] The user can sign up and create a new account
+* [x] The user can log into the app
+* [ ] The user can log out of the app
+* [ ] The user can view the selected social media post from within a table view
+* [ ] The user can add searches to their favorites
+* [ ] The user can search for specific topics
+* [ ] The user can toggle Dark / Light mode
 
 **Optional Nice-to-have Stories**
-* User can be taken to actual X social media app.
-* The user can log into their social media apps to save posts for later
-* Enable Push notifiactions 
+* [ ] User can be taken to actual X social media app.
+* [ ] The user can log into their social media apps to save posts for later
+* [ ] Enable Push notifiactions 
     
 
 ### 2. Screen Archetypes
@@ -113,3 +123,14 @@ HTTP Verb | Endpoint | Description|
 HTTP Verb | Endpoint | Description|
 |----------|----------|------------|
 |`GET`    | /{ig-hashtag-id}/top_media | to get the most popular photos and videos that have a specific hashtag|
+
+## Sprint Gif Demos
+
+### Sprint 1
+
+User Stories Completed:
+- The user can sign up and create a new account.
+- The user can log into the app.
+
+![](sprint1demo.gif)
+
