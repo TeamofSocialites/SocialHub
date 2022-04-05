@@ -24,6 +24,7 @@
 		A494F4A927F3EC3B00A01E8C /* SocialMediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4A827F3EC3A00A01E8C /* SocialMediaAPI.swift */; };
 		A494F4AD27F3EF1000A01E8C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */; };
 		A494F4AF27F3F2DC00A01E8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */; };
+		A4A0DF9627FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0DF9527FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		A494F4A827F3EC3A00A01E8C /* SocialMediaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaAPI.swift; sourceTree = "<group>"; };
 		A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A4A0DF9527FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchTermTableViewCell.swift; sourceTree = "<group>"; };
 		BBBCC01A1F0F1F9589458AAB /* Pods_SocialSearchHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSearchHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1CE01BCB105F38F2850CD38 /* Pods-SocialSearchHub-SocialSearchHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSearchHub-SocialSearchHubUITests.release.xcconfig"; path = "Target Support Files/Pods-SocialSearchHub-SocialSearchHubUITests/Pods-SocialSearchHub-SocialSearchHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D71D1CF9B18B7B11F83CE7BB /* Pods_SocialSearchHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSearchHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				A494F47A27F3D7FB00A01E8C /* Main.storyboard */,
 				A46D47F527F46D8C0091D56F /* SettingsViewController.swift */,
 				A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */,
+				A4A0DF9527FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift */,
 				A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */,
 				A494F4A827F3EC3A00A01E8C /* SocialMediaAPI.swift */,
 				A494F47D27F3D80400A01E8C /* Assets.xcassets */,
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A494F4AD27F3EF1000A01E8C /* SignUpViewController.swift in Sources */,
+				A4A0DF9627FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift in Sources */,
 				A494F4A927F3EC3B00A01E8C /* SocialMediaAPI.swift in Sources */,
 				A46D47F827F46EAA0091D56F /* HomeFeedViewController.swift in Sources */,
 				A494F47927F3D7FB00A01E8C /* LoginViewController.swift in Sources */,
