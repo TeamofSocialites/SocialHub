@@ -34,7 +34,7 @@ class SignUpViewController: UIViewController {
         newUser["email"] = emailTextField.text!
         newUser["username"] = usernameTextField.text!
         newUser["password"] = passwordTextField.text!
-        newUser["favoriteSearches"] = []
+        newUser["favoriteSearches"] = [String]()
         newUser.signUpInBackground { (success, error) in
           if (success) {
               print("New user has been created!")
