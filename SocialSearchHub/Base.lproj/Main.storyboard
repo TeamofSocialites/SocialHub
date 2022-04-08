@@ -214,9 +214,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-AG-QIT">
-                                <rect key="frame" x="183" y="220" width="49" height="21"/>
+                                <rect key="frame" x="183" y="220" width="52" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -272,6 +272,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="bjG-8p-ZCD"/>
                     <connections>
                         <outlet property="tableView" destination="KMr-L6-cDW" id="lRc-5m-aV0"/>
+                        <outlet property="userLabel" destination="n8h-AG-QIT" id="dag-cN-ZpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJd-3n-ZS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

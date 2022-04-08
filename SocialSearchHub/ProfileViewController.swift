@@ -12,6 +12,7 @@ import Parse
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var favoriteSearches = NSArray()
     
+    @IBOutlet weak var userLabel: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoriteSearches.count
     }
@@ -51,8 +52,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         do {
             let user = try PFUser.query()?.getObjectWithId(objectId!)
             favoriteSearches = user!["favoriteSearches"] as! NSArray
+            self.userLabel.text = user!["username"] as? String
         } catch {
-            print("Error occured")
+            print("Unable to get user info")
         }
         
         self.favoriteSearches = favoriteSearches
