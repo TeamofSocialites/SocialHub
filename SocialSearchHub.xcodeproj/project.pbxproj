@@ -25,6 +25,8 @@
 		A494F4AD27F3EF1000A01E8C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AC27F3EF1000A01E8C /* SignUpViewController.swift */; };
 		A494F4AF27F3F2DC00A01E8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F4AE27F3F2DC00A01E8C /* ProfileViewController.swift */; };
 		A4A0DF9627FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0DF9527FC7BDB00C96FD8 /* FavoriteSearchTermTableViewCell.swift */; };
+		F9B06DE32804FB7200033543 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B06DE22804FB7200033543 /* TweetCell.swift */; };
+		F9FD38272805247D00114A2D /* InstagramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD38262805247D00114A2D /* InstagramCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		D1CE01BCB105F38F2850CD38 /* Pods-SocialSearchHub-SocialSearchHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSearchHub-SocialSearchHubUITests.release.xcconfig"; path = "Target Support Files/Pods-SocialSearchHub-SocialSearchHubUITests/Pods-SocialSearchHub-SocialSearchHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D71D1CF9B18B7B11F83CE7BB /* Pods_SocialSearchHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSearchHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E49E7A0F8A0E2F9A8C853C /* Pods-SocialSearchHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSearchHub.release.xcconfig"; path = "Target Support Files/Pods-SocialSearchHub/Pods-SocialSearchHub.release.xcconfig"; sourceTree = "<group>"; };
+		F9B06DE22804FB7200033543 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		F9FD38262805247D00114A2D /* InstagramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 				A494F47D27F3D80400A01E8C /* Assets.xcassets */,
 				A494F47F27F3D80400A01E8C /* LaunchScreen.storyboard */,
 				A494F48227F3D80400A01E8C /* Info.plist */,
+				F9B06DE22804FB7200033543 /* TweetCell.swift */,
+				F9FD38262805247D00114A2D /* InstagramCell.swift */,
 			);
 			path = SocialSearchHub;
 			sourceTree = "<group>";
@@ -430,7 +436,9 @@
 				A46D47F827F46EAA0091D56F /* HomeFeedViewController.swift in Sources */,
 				A494F47927F3D7FB00A01E8C /* LoginViewController.swift in Sources */,
 				A494F47527F3D7FB00A01E8C /* AppDelegate.swift in Sources */,
+				F9FD38272805247D00114A2D /* InstagramCell.swift in Sources */,
 				A494F4AF27F3F2DC00A01E8C /* ProfileViewController.swift in Sources */,
+				F9B06DE32804FB7200033543 /* TweetCell.swift in Sources */,
 				A494F47727F3D7FB00A01E8C /* SceneDelegate.swift in Sources */,
 				A46D47F627F46D8C0091D56F /* SettingsViewController.swift in Sources */,
 			);
