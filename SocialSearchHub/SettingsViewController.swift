@@ -7,9 +7,20 @@
 // OWNER: Payton
 
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController {
 
+    @IBAction func onLogOut(_ sender: Any) {
+        PFUser.logOut()
+        print("The user was logged out!")
+        
+        // Transition to new screen
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let loginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(loginViewController, animated:true, completion:nil)
+    }
+    @IBOutlet weak var darkModeSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
