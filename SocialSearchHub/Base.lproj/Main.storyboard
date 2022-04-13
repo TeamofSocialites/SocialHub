@@ -395,6 +395,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hur-3a-C1E">
                                                 <rect key="frame" x="245.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="onDarkModeSwitchValueChange:" destination="wLo-vd-eZK" eventType="valueChanged" id="5Vt-1n-BCg"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
