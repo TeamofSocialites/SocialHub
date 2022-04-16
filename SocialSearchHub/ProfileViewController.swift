@@ -11,6 +11,7 @@ import Parse
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var favoriteSearches = NSArray()
+    let darkModeAPI = DarkModeAPI()
     
     @IBOutlet weak var userLabel: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +42,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         
         getUserInfoFromDB()
+        
+        // Because this is the first screen apply DarkMode
+        let darkMode = darkModeAPI.getUserDarkModeSettingFromDB()
+        darkModeAPI.toggleDarkModeStyleInApp(darkModeSettingApplied: darkMode)
     }
     
     func getUserInfoFromDB() {
