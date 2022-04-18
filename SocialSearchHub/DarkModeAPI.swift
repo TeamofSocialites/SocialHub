@@ -15,9 +15,9 @@ class DarkModeAPI {
         let objectId = PFUser.current()?.objectId
         do {
             let user = try PFUser.query()?.getObjectWithId(objectId!)
-//            let darkMode = user!["darkMode"] as! Bool
+            let darkMode = user!["darkMode"] as! Bool
             
-            return false //change later
+            return darkMode
             
         } catch {
             print("Unable to get Dark Mode from database")
