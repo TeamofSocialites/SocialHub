@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         // Helpful DEBUG messages for Instagram API
         let creds = InstagramCredentials()
         if (creds.instagramAccessToken == "ACCESS_TOKEN") {
-            print("!!! READ: Replace Access Token with the code for the Instagram API to work. See Payton for more details. !!!")
+            print("!!! READ: If getting error, remember to replace Access Token with the code for the Instagram API to work. !!!")
         } else {
             print("!!!! READ: DO NOT push Access Token code to Github. Replace the access token with: 'ACCESS_TOKEN' before pushing to GitHub. !!!")
         }
