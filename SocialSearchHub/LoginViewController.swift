@@ -22,6 +22,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Helpful DEBUG messages for Instagram API
+        let creds = InstagramCredentials()
+        if (creds.instagramAccessToken == "ACCESS_TOKEN") {
+            print("!!! READ: Replace Access Token with the code for the Instagram API to work. See Payton for more details. !!!")
+        } else {
+            print("!!!! READ: DO NOT push Access Token code to Github. Replace the access token with: 'ACCESS_TOKEN' before pushing to GitHub. !!!")
+        }
+        
         passwordTextField.isSecureTextEntry = true
         
         // add an action (button)
