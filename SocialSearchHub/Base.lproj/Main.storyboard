@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,7 +38,7 @@
                                 <rect key="frame" x="267" y="646" width="64" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                 <connections>
                                     <action selector="onLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooU-K9-6Kb"/>
                                 </connections>
@@ -72,7 +73,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="riH-XT-PfD" id="rp5-8o-D5i"/>
                         <outlet property="usernameTextField" destination="4DZ-id-Twh" id="XJG-Pg-gUh"/>
-                        <segue destination="dh9-dO-Lop" kind="presentation" identifier="loginSegue" id="TP1-J1-wSs"/>
+                        <segue destination="dh9-dO-Lop" kind="show" identifier="loginSegue" id="TP1-J1-wSs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -130,7 +131,7 @@
                                 <rect key="frame" x="265" y="608" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="2pa-B0-aQR" eventType="touchUpInside" id="yXK-6o-Ll1"/>
                                 </connections>
@@ -156,14 +157,74 @@
                         <outlet property="emailTextField" destination="caV-Ie-5Ne" id="q8F-e8-JP2"/>
                         <outlet property="passwordTextField" destination="AxC-VA-7Xe" id="2NE-Mb-Wo8"/>
                         <outlet property="usernameTextField" destination="h3U-K5-BdV" id="6ZH-8n-HV6"/>
-                        <segue destination="dh9-dO-Lop" kind="presentation" identifier="signupSegue" id="h7K-mi-pYF"/>
+                        <segue destination="dh9-dO-Lop" kind="show" identifier="signupSegue" id="h7K-mi-pYF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfi-6y-0ls" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124.6376811594205" y="81.696428571428569"/>
         </scene>
-        <!--Home-->
+        <!--Search-->
+        <scene sceneID="Bf5-b3-3ko">
+            <objects>
+                <viewController id="jVe-MM-SC4" customClass="SearchViewController" customModule="SocialSearchHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hPE-vO-6Wa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfi-Ke-nSE">
+                                <rect key="frame" x="173" y="516" width="69" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                                <connections>
+                                    <action selector="onSearch:" destination="jVe-MM-SC4" eventType="touchUpInside" id="bKn-g0-A2Q"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0wZ-ws-MYt">
+                                <rect key="frame" x="103" y="431" width="209" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTextChange:" destination="jVe-MM-SC4" eventType="editingChanged" id="7Zj-I7-dWW"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlg-BU-cHi">
+                                <rect key="frame" x="320" y="433" width="69" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="setFavorite:" destination="jVe-MM-SC4" eventType="touchUpInside" id="xh0-x2-P63"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a search keyword here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-QR-REt">
+                                <rect key="frame" x="99" y="327" width="216" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oIj-0C-VXD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" id="O3s-Ar-yHx"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="Tlg-BU-cHi" id="BBD-mX-mOY"/>
+                        <outlet property="searchTextField" destination="0wZ-ws-MYt" id="sH1-DJ-S9z"/>
+                        <segue destination="KEe-2A-CKB" kind="show" identifier="feedSegue" id="cBs-ub-Qdk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7W-5d-RgS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492.75362318840581" y="1682.8125"/>
+        </scene>
+        <!--Home Feed View Controller-->
         <scene sceneID="OfA-K0-XqP">
             <objects>
                 <tableViewController id="KEe-2A-CKB" customClass="HomeFeedViewController" customModule="SocialSearchHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -270,7 +331,7 @@
                             <outlet property="delegate" destination="KEe-2A-CKB" id="QTe-1s-Ewq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Home" id="OzF-1D-LEw"/>
+                    <navigationItem key="navigationItem" id="JHA-2c-qC2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="homeTableView" destination="Eqn-nD-d72" id="paI-Ut-kt3"/>
@@ -278,7 +339,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sy-SE-KQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628.98550724637687" y="1788.6160714285713"/>
+            <point key="canvasLocation" x="1578" y="2016"/>
         </scene>
         <!--Profile-->
         <scene sceneID="BY3-0q-BEm">
@@ -358,6 +419,7 @@
         <scene sceneID="Fd2-rK-WwM">
             <objects>
                 <tabBarController id="dh9-dO-Lop" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7xi-Gs-tlt"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CPX-7K-2d3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -366,7 +428,7 @@
                     <connections>
                         <segue destination="RBj-s6-Rle" kind="relationship" relationship="viewControllers" id="udH-qZ-Uzz"/>
                         <segue destination="wLo-vd-eZK" kind="relationship" relationship="viewControllers" id="wzd-ZD-TKh"/>
-                        <segue destination="KEe-2A-CKB" kind="relationship" relationship="viewControllers" id="0Kd-xI-jdl"/>
+                        <segue destination="jVe-MM-SC4" kind="relationship" relationship="viewControllers" id="AWP-rs-3s6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4J-28-Itg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -431,7 +493,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TP1-J1-wSs"/>
+        <segue reference="h7K-mi-pYF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SocialSearchHub-logos_black" width="1200" height="1200"/>
@@ -439,6 +501,7 @@
         <image name="person.crop.rectangle" catalog="system" width="128" height="93"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profile-button" width="200" height="200"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

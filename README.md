@@ -38,7 +38,7 @@ SocialSearchHub is a hub for users to search for topics, ideas, and pictures wit
 * [x] The user can log into the app
 * [x] The user can log out of the app
 * [x] The user can view the selected social media post from within a table view
-* [ ] The user can add searches to their favorites
+* [x] The user can add searches to their favorites
 * [ ] The user can search for specific topics
 * [x] The user can toggle Dark / Light mode
 
@@ -138,5 +138,13 @@ User Stories Completed:
 
 User Stories Completed:
 - The user can view the selected social media post from within a table view
+
 ![](sprint2demo.gif)
+
+### Sprint 3
+
+User Stories Completed:
+- The user can add searches to their favorites
+
+![](sprint3demo.gif)
 
