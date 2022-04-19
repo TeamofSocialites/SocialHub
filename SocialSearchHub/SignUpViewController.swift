@@ -36,6 +36,7 @@ class SignUpViewController: UIViewController {
         newUser["password"] = passwordTextField.text!
         newUser["darkMode"] = false
         newUser["favoriteSearches"] = [String]()
+        newUser["darkMode"] = false // can be changed to system settings
         newUser.signUpInBackground { (success, error) in
           if (success) {
               print("New user has been created!")
