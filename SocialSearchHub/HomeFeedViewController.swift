@@ -29,9 +29,6 @@ class HomeFeedViewController: UITableViewController {
         // TODO: Might need to replace "hacky" code in the future.
         homeTableView.estimatedRowHeight = 500
         homeTableView.rowHeight = 367
-        
-        print(instagramPosts[0])
-        print(instagramPosts[1])
     }
     
     
