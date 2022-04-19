@@ -48,6 +48,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         darkModeAPI.toggleDarkModeStyleInApp(darkModeSettingApplied: darkMode)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+        
+            getUserInfoFromDB()
+            
+            self.tableView.reloadData()
+        }
+    
     func getUserInfoFromDB() {
         // Special query for User object
         // https://docs.parseplatform.org/ios/guide/#querying
