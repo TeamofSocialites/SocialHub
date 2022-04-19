@@ -7,62 +7,98 @@
 // OWNER: Jabryl
 
 import Foundation
+import Alamofire
+import Parse
 
-import BDBOAuth1Manager
-
-class TwitterAPICaller: BDBOAuth1SessionManager {
-    static let client = TwitterAPICaller(baseURL: URL(string: "https://api.twitter.com"), consumerKey: "5lUJuO5AUpPUCez4ewYDFrtgh", consumerSecret: "s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv1o2TKhS1avCdS")
-    var loginSuccess: (() -> ())?
-    var loginFailure: ((Error) -> ())?
-    
-    func handleOpenUrl(url: URL){
-        let requestToken = BDBOAuth1Credential(queryString: url.query)
-        TwitterAPICaller.client?.fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken: BDBOAuth1Credential!) in
-            self.loginSuccess?()
-        }, failure: { (error: Error!) in
-            self.loginFailure?(error)
-        })
+// Alamofire will decode the response into this struct.
+struct InstagramHashTagResponse: Codable {
+    struct Data : Codable {
+        let id : String
     }
     
-    func login(url: String, success: @escaping () -> (), failure: @escaping (Error) -> ()){
-        loginSuccess = success
-        loginFailure = failure
-        TwitterAPICaller.client?.deauthorize()
-        TwitterAPICaller.client?.fetchRequestToken(withPath: url, method: "GET", callbackURL: URL(string: "alamoTwitter://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) -> Void in
-            let url = URL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token!)")!
-            UIApplication.shared.open(url)
-        }, failure: { (error: Error!) -> Void in
-            print("Error: \(error.localizedDescription)")
-            self.loginFailure?(error)
-        })
-    }
-    func logout (){
-        deauthorize()
+    let data : [Data]
+}
+
+// Alamofire will decode the response into this struct.
+// See https://www.youtube.com/watch?v=1QuH2CGmi6I for more details.
+struct InstagramTopPostResponse: Codable {
+    struct Post : Codable {
+        let id : String
+        let media_type : String
+        let caption : String
+        let permalink : String
+        let comments_count : Int?
+        let like_count : Int?
     }
     
-    func getDictionaryRequest(url: String, parameters: [String:Any], success: @escaping (NSDictionary) -> (), failure: @escaping (Error) -> ()){
-        TwitterAPICaller.client?.get(url, parameters: parameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
-            success(response as! NSDictionary)
-        }, failure: { (task: URLSessionDataTask?, error: Error) in
-            failure(error)
-        })
+    let data : [Post]
+}
+
+struct InstagramCredentials {
+    let instagramAPIDomain = "https://graph.facebook.com/v13.0/"
+    let instagramUserID = "17841452763115082" // Connected IG User ID of professional account
+    let instagramAppID = "566203391320512" // App ID
+    let instagramAccessToken = "EAAIC9YACocABAPXrZC3ZBZAs4Hw1YSYhVqfVii9xJ1D7pCTA58E48SS1VBChVrLohQMjLDaSX11dCdjS0npDeFbcLIJMRcy9k40O3iHqbN9N7BgymUGRKgRSsuQYup4d3SZB8QDbt4YZCeYrnxoFTxPQLmhIe1FKK6FOZCvEK1svXZBX1Bfjb80" // Long-term Access Token that expires June 17, 2022. TODO: Will need to be replaced.
+}
+
+class SocialMediaAPI {
+    let instaCreds = InstagramCredentials()
+    
+    // MAIN FUNCTION to call.
+    // GIVEN: Query String
+    // RETURNS: Posts
+    func searchInstagram(query: String) async -> [InstagramTopPostResponse.Post] {
+        do {
+            // Get hashtag ID
+            let hashtagIDResponse = try await asyncGetInstagramSearchTermHashtagID(query: query)
+            let hashtagID = hashtagIDResponse.data[0].id
+            
+            // Get top posts
+            let topPostsResponse = try await asyncGetHashtagTopPosts(hashtagID: hashtagID)
+            
+            return topPostsResponse.data
+        } catch {
+            print("Error occured getting Instagram Search Results")
+        }
+        
+        return [InstagramTopPostResponse.Post]()
     }
     
-    func getDictionariesRequest(url: String, parameters: [String:Any], success: @escaping ([NSDictionary]) -> (), failure: @escaping (Error) -> ()){
-        print(parameters)
-        TwitterAPICaller.client?.get(url, parameters: parameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
-            success(response as! [NSDictionary])
-        }, failure: { (task: URLSessionDataTask?, error: Error) in
-            failure(error)
-        })
+    // HELPER FUNCTION
+    // Finds the hashtag ID to be used to find the most popular posts
+    // See https://developers.facebook.com/docs/instagram-api/reference/ig-hashtag-search for more details
+    func asyncGetInstagramSearchTermHashtagID(query: String) async throws -> InstagramHashTagResponse {
+        // Form request.
+        let requestURL = instaCreds.instagramAPIDomain + "ig_hashtag_search"
+        
+        // Parameters
+        let parameters = ["user_id": instaCreds.instagramUserID, "q": query, "access_token": instaCreds.instagramAccessToken]
+        
+        // Send request
+        let request = AF.request(requestURL, parameters: parameters)
+        
+        return try await request.serializingDecodable(InstagramHashTagResponse.self).value
+       
     }
-
-    func postRequest(url: String, parameters: [Any], success: @escaping () -> (), failure: @escaping (Error) -> ()){
-        TwitterAPICaller.client?.post(url, parameters: parameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
-            success()
-        }, failure: { (task: URLSessionDataTask?, error: Error) in
-            failure(error)
-        })
+    
+    // HELPER FUNCTION
+    // Given hashtagID returns all the top posts!
+    // See https://developers.facebook.com/docs/instagram-api/reference/ig-hashtag/top-media for more details
+    func asyncGetHashtagTopPosts(hashtagID: String) async throws -> InstagramTopPostResponse {
+        if (hashtagID.isEmpty) {
+            print("Error. hashtagID cannot be null")
+        }
+        
+        // Form requests
+        let requestURL = instaCreds.instagramAPIDomain + hashtagID + "/top_media"
+        print(requestURL)
+        
+        // Parameters
+        let parameters = ["user_id": instaCreds.instagramUserID, "fields": "id,media_type,comments_count,like_count,permalink,caption", "access_token": instaCreds.instagramAccessToken]
+        
+        // Send request
+        let request = AF.request(requestURL, parameters: parameters)
+        
+        return try await request.serializingDecodable(InstagramTopPostResponse.self).value
     }
-
 }
