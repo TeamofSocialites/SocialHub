@@ -10,6 +10,8 @@ import Parse
 
 class SearchViewController: UIViewController {
     
+    var instagramPosts = [InstagramTopPostResponse.Post]()
+    
     // create alert for empty search field
     let alert = UIAlertController(title: "Invalid Search", message: "Please enter a valid search", preferredStyle: .alert)
     var favoriteSearches = NSArray()
@@ -49,11 +51,29 @@ class SearchViewController: UIViewController {
         } else {
             // Do the search using the APIs - wait for a response if needed
             
-            // Segue the user
-            self.performSegue(withIdentifier: "feedSegue", sender: nil)
+            // Search the Instagram API
+            Task {
+                    let socialMediaApi = SocialMediaAPI()
+                    let posts = await socialMediaApi.searchInstagram(query: self.searchTextField.text!) // Should never be null as we check above
+                    
+                    self.instagramPosts = posts
+                
+                    // Segue the user only AFTER we get the posts.
+                    self.performSegue(withIdentifier: "feedSegue", sender: nil)
+                }
             
         }
            
+    }
+    
+    // override segue to pass Instagram Posts to HomeFeedViewController
+    // See https://stackoverflow.com/questions/35398309/how-to-pass-parameters-when-performing-a-segue-using-performseguewithidentifier
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "feedSegue" {
+            if let homeFeedVC = segue.destination as? HomeFeedViewController {
+                homeFeedVC.instagramPosts = self.instagramPosts
+            }
+        }
     }
     
     func setFavoritedImage(_ isFavorited:Bool) {

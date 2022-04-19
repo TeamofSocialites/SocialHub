@@ -228,7 +228,7 @@
         <scene sceneID="OfA-K0-XqP">
             <objects>
                 <tableViewController id="KEe-2A-CKB" customClass="HomeFeedViewController" customModule="SocialSearchHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Eqn-nD-d72">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Eqn-nD-d72">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -288,40 +288,59 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="367"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="niu-Qp-knU">
-                                            <rect key="frame" x="0.0" y="12.5" width="60" height="60.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="pxM-uM-zwZ"/>
-                                            </constraints>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSm-ct-Gw4">
+                                            <rect key="frame" x="286" y="25" width="108" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="See Full Post"/>
+                                            <connections>
+                                                <action selector="onButtonPressed:" destination="2XE-6o-KGB" eventType="touchUpInside" id="ljs-4O-UBY"/>
+                                            </connections>
+                                        </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="instagram" translatesAutoresizingMaskIntoConstraints="NO" id="qwR-w9-esH">
+                                            <rect key="frame" x="13" y="-21" width="47" height="123"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="82i-fr-BeH">
-                                            <rect key="frame" x="0.0" y="89" width="414" height="268.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="271" id="WZB-yx-Ich"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="hand.thumbsup" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dry-gx-Zf8">
+                                            <rect key="frame" x="20" y="317" width="21" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mae-Ji-xA4">
-                                            <rect key="frame" x="68" y="30" width="326" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="82i-fr-BeH">
+                                            <rect key="frame" x="19" y="87" width="377" height="118"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption of Instagram Story" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQQ-ub-BGS">
+                                            <rect key="frame" x="41" y="206" width="332" height="105"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="message" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4gG-K5-ODq">
+                                            <rect key="frame" x="136" y="317" width="22" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOX-qb-AFv">
+                                            <rect key="frame" x="49" y="319" width="79" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB1-Ee-KKT">
+                                            <rect key="frame" x="166" y="316" width="122" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="niu-Qp-knU" firstAttribute="top" secondItem="aUe-Sw-F75" secondAttribute="topMargin" id="H8a-UH-a0e"/>
-                                        <constraint firstItem="82i-fr-BeH" firstAttribute="top" secondItem="niu-Qp-knU" secondAttribute="bottom" constant="14" id="Ujd-0k-xOh"/>
-                                        <constraint firstItem="82i-fr-BeH" firstAttribute="centerX" secondItem="aUe-Sw-F75" secondAttribute="centerX" id="UkZ-yb-efP"/>
-                                        <constraint firstItem="niu-Qp-knU" firstAttribute="centerY" secondItem="Mae-Ji-xA4" secondAttribute="centerY" id="e3O-Va-ldV"/>
-                                        <constraint firstItem="Mae-Ji-xA4" firstAttribute="leading" secondItem="niu-Qp-knU" secondAttribute="trailing" constant="8" id="m4X-2c-3pN"/>
-                                        <constraint firstItem="82i-fr-BeH" firstAttribute="leading" secondItem="niu-Qp-knU" secondAttribute="leading" id="oQc-GM-aH1"/>
-                                        <constraint firstItem="82i-fr-BeH" firstAttribute="leading" secondItem="aUe-Sw-F75" secondAttribute="leadingMargin" constant="-20" id="sV9-uB-COi"/>
-                                        <constraint firstAttribute="bottom" secondItem="82i-fr-BeH" secondAttribute="bottom" constant="8" id="xVr-hQ-1y7"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="commentLabel" destination="aB1-Ee-KKT" id="AHK-VC-md4"/>
                                     <outlet property="contentImage" destination="82i-fr-BeH" id="dK4-e5-IqM"/>
-                                    <outlet property="userImage" destination="niu-Qp-knU" id="yiY-Yk-mgN"/>
-                                    <outlet property="usernameLabel" destination="Mae-Ji-xA4" id="Y89-GD-4Lu"/>
+                                    <outlet property="instagramCaptionLabel" destination="lQQ-ub-BGS" id="fOW-7y-xdd"/>
+                                    <outlet property="likesLabel" destination="SOX-qb-AFv" id="A7O-hv-SfI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -339,7 +358,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sy-SE-KQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="2016"/>
+            <point key="canvasLocation" x="1576.8115942028987" y="2015.625"/>
         </scene>
         <!--Profile-->
         <scene sceneID="BY3-0q-BEm">
@@ -497,7 +516,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SocialSearchHub-logos_black" width="1200" height="1200"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
+        <image name="instagram" width="735" height="752"/>
+        <image name="message" catalog="system" width="128" height="113"/>
         <image name="person.crop.rectangle" catalog="system" width="128" height="93"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profile-button" width="200" height="200"/>

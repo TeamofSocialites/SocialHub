@@ -29,6 +29,7 @@ struct InstagramTopPostResponse: Codable {
         let permalink : String
         let comments_count : Int?
         let like_count : Int?
+        let media_url : String?
     }
     
     let data : [Post]
@@ -94,7 +95,7 @@ class SocialMediaAPI {
         print(requestURL)
         
         // Parameters
-        let parameters = ["user_id": instaCreds.instagramUserID, "fields": "id,media_type,comments_count,like_count,permalink,caption", "access_token": instaCreds.instagramAccessToken]
+        let parameters = ["user_id": instaCreds.instagramUserID, "fields": "id,media_type,media_url,comments_count,like_count,permalink,caption", "access_token": instaCreds.instagramAccessToken]
         
         // Send request
         let request = AF.request(requestURL, parameters: parameters)

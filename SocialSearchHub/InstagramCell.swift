@@ -8,11 +8,19 @@
 import UIKit
 
 class InstagramCell: UITableViewCell {
+    
+    // Create closure
+    var buttonPressed : (() -> ()) = {}
 
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBAction func onButtonPressed(_ sender: Any) {
+        buttonPressed()
+    }
+    
+    @IBOutlet weak var instagramCaptionLabel: UILabel!
     @IBOutlet weak var contentImage: UIImageView!
     
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
