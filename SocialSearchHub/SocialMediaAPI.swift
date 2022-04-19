@@ -38,7 +38,7 @@ struct InstagramCredentials {
     let instagramAPIDomain = "https://graph.facebook.com/v13.0/"
     let instagramUserID = "17841452763115082" // Connected IG User ID of professional account
     let instagramAppID = "566203391320512" // App ID
-    let instagramAccessToken = "EAAIC9YACocABAPXrZC3ZBZAs4Hw1YSYhVqfVii9xJ1D7pCTA58E48SS1VBChVrLohQMjLDaSX11dCdjS0npDeFbcLIJMRcy9k40O3iHqbN9N7BgymUGRKgRSsuQYup4d3SZB8QDbt4YZCeYrnxoFTxPQLmhIe1FKK6FOZCvEK1svXZBX1Bfjb80" // Long-term Access Token that expires June 17, 2022. TODO: Will need to be replaced.
+    let instagramAccessToken = "ACCESS_TOKEN" // Long-term Access Token that expires June 17, 2022. TODO: Will need to be replaced.
 }
 
 class SocialMediaAPI {
