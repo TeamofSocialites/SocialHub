@@ -10,8 +10,7 @@ import UIKit
 import AlamofireImage
 
 class HomeFeedViewController: UITableViewController {
-   
-    var instagramPostsIndex = 0
+
     var instagramPosts = [InstagramTopPostResponse.Post]()
    
     @IBOutlet var homeTableView: UITableView!
@@ -50,28 +49,27 @@ class HomeFeedViewController: UITableViewController {
         if (indexPath.row % 2) == 0 {
             return tweetcell
         } else {
-            // Fill Instagram Cell
+            // Fill Instagram Cell, using indexPath.row because a class variable was giving unintended behavior.
+            // TODO: Because indexPath.row, handle case when indexPath.row is out of bounds of instagram posts.
             let instagramcell = homeTableView.dequeueReusableCell(withIdentifier: "InstagramCell", for: indexPath) as! InstagramCell
-            instagramcell.instagramCaptionLabel.text = instagramPosts[instagramPostsIndex].caption
+            instagramcell.instagramCaptionLabel.text = instagramPosts[indexPath.row].caption
             instagramcell.buttonPressed = {
                 // https://stackoverflow.com/questions/31628246/make-button-open-link-swift
-                UIApplication.shared.openURL(NSURL(string: self.instagramPosts[self.instagramPostsIndex].permalink)! as URL)
+                UIApplication.shared.openURL(NSURL(string: self.instagramPosts[indexPath.row].permalink)! as URL)
             }
             
             // Handle optional values
             
-            // See https://stackoverflow.com/questions/28290833/swift-how-to-cast-from-int-to-string
-            instagramcell.likesLabel.text = instagramPosts[instagramPostsIndex].like_count.flatMap {String ($0) } ?? "Hidden"
-            instagramcell.commentLabel.text = instagramPosts[instagramPostsIndex].comments_count.flatMap {String ($0) } ?? "Hidden"
+            // See. Used to convert Optional Int to String https://stackoverflow.com/questions/28290833/swift-how-to-cast-from-int-to-string
+            instagramcell.likesLabel.text = instagramPosts[indexPath.row].like_count.flatMap {String ($0) } ?? "Hidden"
+            instagramcell.commentLabel.text = instagramPosts[indexPath.row].comments_count.flatMap {String ($0) } ?? "Hidden"
             
-            if ((instagramPosts[instagramPostsIndex].media_url) != nil) {
-                let url = URL(string: instagramPosts[instagramPostsIndex].media_url!)!
+            if ((instagramPosts[indexPath.row].media_url) != nil) {
+                let url = URL(string: instagramPosts[indexPath.row].media_url!)!
                 instagramcell.contentImage.af.setImage(withURL: url)
             } else {
                 
             }
-            
-            self.instagramPostsIndex += 1
             
             return instagramcell
         }
