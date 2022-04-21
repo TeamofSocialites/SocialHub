@@ -46,6 +46,30 @@ class HomeFeedViewController: UITableViewController {
         
         // TODO: Because indexPath is expected to be the sum of tweets and instagram posts, we need to handle the case where tweets or instagram posts are empty...
         // if ((indexPath.row % 2) == 0 || instagramPostsIndex >= instagramPosts.count) &&  !tweets.isEmpty)
+        //
+        //
+        //
+        if indexPath.row == 0 {
+            tweetcell.usernameLabel.text = "Kobi Allen" as String
+            tweetcell.contentLabel.text = "@ngartrelle is practically the Phil Jackson of Pro NBA 2k gaming . #zenmaster #winner #winnerswin" as String
+        }
+        if indexPath.row == 2 {
+            tweetcell.usernameLabel.text = "Anthony Pasquarella" as String
+            tweetcell.contentLabel.text = "Writers/Sports analysts coming out the woodwork to defend why Jokic is MVP and not Embiid. Cause they know what they're seeing against the Raptors is what we see all year. Only 2 players in the NBA can no one player guard. Embiid and Giannis.  #EmbiidMVP #NBAPlayoffs2022" as String
+        }
+        if indexPath.row == 4 {
+            tweetcell.usernameLabel.text = "Turd Ferguson" as String
+            tweetcell.contentLabel.text = "I’m not sure that’s relevant here. The NBA doesn’t have some line of demarcation. Look at where Minnesota is in comparison to the rest of the league. They’re more disserviced  than we are." as String
+        }
+        if indexPath.row == 6 {
+            tweetcell.usernameLabel.text = "T" as String
+            tweetcell.contentLabel.text = "I thought it would be a rematch in the NBA Finals this year. With both Middleton and Booker out for the foreseeable future both teams are in real danger of not making it out of the first round." as String
+        }
+        
+        //
+        //
+        //
+        
         if (indexPath.row % 2) == 0 {
             return tweetcell
         } else {
